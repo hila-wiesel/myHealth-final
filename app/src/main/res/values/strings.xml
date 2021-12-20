@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MyHealth</string>
+    <string name="btn_create">Create Account</string>
+    <string name="btn_sign">Sign In</string>
+    <string name="next">Next</string>
+    <string name="profile">profile</string>
+    <string name="notifications">notifications</string>
+    <string name="logout">logout</string>
+    <string name="setting">setting</string>
+</resources>
