@@ -4,10 +4,10 @@ package com.example.myhealthnew;
 import java.util.ArrayList;
 
 public class Client extends User {
-    enum Gender{
-        male,
-        female
-    }
+//    enum Gender{
+//        male,
+//        female
+//    }
     public String  name;
     public double height;
     public double weight;
@@ -18,12 +18,12 @@ public class Client extends User {
     public int phoneNumber;
     public ArrayList<Integer> waterReminderFrequency;
     public ArrayList<Integer> sportReminderFrequency;
-    public int recommendedCaloriesPerDay;
+    public double recommendedCaloriesPerDay;
     public int leftCaloriesPerDay;
 
 
     public Client(String email, String password, String name, int height, int weight, String city,
-                  String country, int birthYear,String  gender, int phoneNumber) {
+                  String country, int birthYear,String  gender, int phoneNumber, double recommendedCaloriesPerDay) {
         super(email, password);
         this.name = name;
         this.height = height;
@@ -33,5 +33,6 @@ public class Client extends User {
         this.phoneNumber = phoneNumber;
         this.birthYear = birthYear;
         this.gender = gender;
+        this.recommendedCaloriesPerDay = recommendedCaloriesPerDay;
     }
 }

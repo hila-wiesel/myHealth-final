@@ -17,6 +17,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Calendar;
+
 public class ClientRegiter1 extends AppCompatActivity {
 
     private DatabaseReference reference;
@@ -69,6 +71,19 @@ public class ClientRegiter1 extends AppCompatActivity {
             et_Country.requestFocus();
             return;
         }
+        if(!gender.equals("female") && !gender.equals("male")){
+            et_Gender.setError("invalid. gender= male/female");
+            et_Gender.requestFocus();
+            return;
+        }
+        int age = Calendar.getInstance().get(Calendar.YEAR) - birthYear;
+        double recommendedCaloriesPerDay;
+        if (gender.equals("female")){
+            recommendedCaloriesPerDay = getBMR_female(age, height, weight);
+        }
+        else{
+            recommendedCaloriesPerDay = getBMR_male(age, height, weight);
+        }
 
         reference.child(UserID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -78,7 +93,7 @@ public class ClientRegiter1 extends AppCompatActivity {
 
                 String password = snapshot.child("password").getValue().toString();
                 Client client = new Client(email, password, name, height, weight, city,
-                        country, birthYear, gender, phoneNumber);
+                        country, birthYear, gender, phoneNumber, recommendedCaloriesPerDay);
 
                 FirebaseDatabase.getInstance().getReference("Clients")
                         .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(client);
@@ -90,5 +105,13 @@ public class ClientRegiter1 extends AppCompatActivity {
             }
         });
         startActivity (new Intent(ClientRegiter1.this, ClientRegister2.class));
+    }
+
+    double getBMR_female(int age, int height, int weight){
+        return 4.7*age - 1.8*height +9.6*weight +655;
+    }
+
+    double getBMR_male(int age, int height, int weight){
+        return 6.8*age - 5*height +13.8*weight +66;
     }
 }
