@@ -24,4 +24,12 @@ public class AdminHomePage extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
+    public void addEvent(View view){
+        Intent intent = new Intent(AdminHomePage.this, AddEventAdmin.class);
+        Bundle b = new Bundle();
+        b.putInt("key", 1);
+        startActivity(intent);
+        finish();
+    }
 }

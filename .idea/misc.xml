@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/97252/AndroidStudioProjects/myHealth/app/src/main/res/layout/activity_add_event_admin.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/97252/AndroidStudioProjects/myHealth/app/src/main/res/layout/activity_add_food_admin.xml" value="0.264" />
+        <entry key="..\:/Users/97252/AndroidStudioProjects/myHealth/app/src/main/res/layout/activity_add_meal_client.xml" value="0.4" />
         <entry key="..\:/Users/97252/AndroidStudioProjects/myHealth/app/src/main/res/layout/activity_admin_home_page.xml" value="0.264" />
         <entry key="..\:/Users/97252/AndroidStudioProjects/myHealth/app/src/main/res/layout/activity_client_home_page.xml" value="0.2" />
         <entry key="..\:/Users/97252/AndroidStudioProjects/myHealth/app/src/main/res/layout/activity_client_register2.xml" value="0.264" />

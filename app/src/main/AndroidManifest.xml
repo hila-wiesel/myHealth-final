@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyHealth">
         <activity
+            android:name=".AddEventAdmin"
+            android:exported="false" />
+        <activity
+            android:name=".AddMealClient"
+            android:exported="false" />
+        <activity
             android:name=".AddFoodAdmin"
             android:exported="false" />
         <activity
