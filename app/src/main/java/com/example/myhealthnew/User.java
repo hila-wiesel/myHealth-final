@@ -1,12 +1,12 @@
 package com.example.myhealthnew;
 
 public class User {
-    public String password;
+    public String firstPassword;
     public String email;
 
 
     public User(String email, String password){
-        this.password = password;
+        this.firstPassword = password;
         this.email = email;
     }
     public User(){}

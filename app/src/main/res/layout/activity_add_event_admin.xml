@@ -34,53 +34,53 @@
 
     <EditText
         android:id="@+id/et_nameEvent"
-        android:layout_width="239dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="128dp"
+        android:layout_width="300dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="116dp"
         android:ems="10"
         android:hint="event name"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.63"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_title_AddEvent"
-        android:layout_width="240dp"
-        android:layout_height="39dp"
+        android:layout_width="295dp"
+        android:layout_height="54dp"
         android:layout_marginTop="56dp"
         android:layout_marginBottom="8dp"
-        android:text="  ADD NEW EVENT"
+        android:text="           ADD NEW EVENT"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/et_nameEvent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.598"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.52" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <EditText
         android:id="@+id/et_category"
-        android:layout_width="105dp"
-        android:layout_height="44dp"
+        android:layout_width="116dp"
+        android:layout_height="55dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:hint="category"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toStartOf="@+id/et_date"
-        app:layout_constraintHorizontal_bias="0.793"
+        app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_nameEvent" />
 
     <EditText
         android:id="@+id/et_date"
-        android:layout_width="109dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="84dp"
+        android:layout_width="116dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="36dp"
         android:ems="10"
         android:hint="date"
         android:inputType="date"
@@ -92,7 +92,7 @@
         android:layout_width="104dp"
         android:layout_height="44dp"
         android:layout_marginStart="68dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="15dp"
         android:ems="10"
         android:hint="City"
         android:inputType="textPersonName"
@@ -101,10 +101,10 @@
 
     <EditText
         android:id="@+id/et_street"
-        android:layout_width="82dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="92dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="15dp"
         android:layout_marginBottom="16dp"
         android:ems="10"
         android:hint="Street"
@@ -116,25 +116,25 @@
 
     <EditText
         android:id="@+id/et_houseNum"
-        android:layout_width="77dp"
+        android:layout_width="82dp"
         android:layout_height="44dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:hint="Number"
         android:inputType="numberSigned"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.017"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/et_street"
         app:layout_constraintTop_toBottomOf="@+id/et_endTime" />
 
     <EditText
         android:id="@+id/et_startTime"
-        android:layout_width="105dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="119dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="15dp"
         android:ems="10"
         android:hint="start"
         android:inputType="time"
@@ -143,35 +143,36 @@
 
     <EditText
         android:id="@+id/et_endTime"
-        android:layout_width="110dp"
-        android:layout_height="44dp"
+        android:layout_width="119dp"
+        android:layout_height="48dp"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:hint="end"
         android:inputType="time"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.058"
+        app:layout_constraintHorizontal_bias="0.655"
         app:layout_constraintStart_toEndOf="@+id/et_startTime"
         app:layout_constraintTop_toBottomOf="@+id/et_date" />
 
     <EditText
         android:id="@+id/et_registerLink"
-        android:layout_width="271dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="208dp"
+        android:layout_width="304dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="224dp"
         android:ems="10"
         android:hint="Register Link"
         android:inputType="textFilter"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.663"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_nameEvent" />
 
     <EditText
         android:id="@+id/et_description"
-        android:layout_width="271dp"
-        android:layout_height="133dp"
+        android:layout_width="305dp"
+        android:layout_height="130dp"
         android:layout_marginTop="28dp"
         android:layout_marginBottom="16dp"
         android:ems="10"
@@ -179,8 +180,9 @@
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.669"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_registerLink"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.009" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -76,6 +76,11 @@ public class ClientRegiter1 extends AppCompatActivity {
             et_Gender.requestFocus();
             return;
         }
+        if (birthYear> Calendar.getInstance().get(Calendar.YEAR) || birthYear<Calendar.getInstance().get(Calendar.YEAR)-120){
+            et_BirthYear.setError("invalid birth year");
+            et_BirthYear.requestFocus();
+            return;
+        }
         int age = Calendar.getInstance().get(Calendar.YEAR) - birthYear;
         double recommendedCaloriesPerDay;
         if (gender.equals("female")){
@@ -91,7 +96,7 @@ public class ClientRegiter1 extends AppCompatActivity {
                 String email = snapshot.child("email").getValue().toString();
                 Toast.makeText(ClientRegiter1.this, "email: "+email, Toast.LENGTH_LONG).show();
 
-                String password = snapshot.child("password").getValue().toString();
+                String password = snapshot.child("firstPassword").getValue().toString();
                 Client client = new Client(email, password, name, height, weight, city,
                         country, birthYear, gender, phoneNumber, recommendedCaloriesPerDay);
 

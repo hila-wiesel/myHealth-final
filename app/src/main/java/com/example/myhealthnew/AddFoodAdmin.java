@@ -26,11 +26,11 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class AddFoodAdmin extends AppCompatActivity {
-
-    int counter = 1;
-    private DatabaseReference reference;
-    private String adminID;
-    private FirebaseUser admin;
+    // for unique key:
+//    int counter = 1;
+//    private DatabaseReference reference;
+//    private String adminID;
+//    private FirebaseUser admin;
 
     //Units
     String[] unitItems = {"100 grams", "teaspoon", "tablespoon", "slice", "glass", "one unit"};
@@ -71,22 +71,22 @@ public class AddFoodAdmin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_food_admin);
 
-        admin = FirebaseAuth.getInstance().getCurrentUser();
-        reference = FirebaseDatabase.getInstance().getReference("Admins");
-        adminID = admin.getUid();
-
-        reference.child(adminID).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                email = snapshot.child("email").getValue().toString();
-                Toast.makeText(AddFoodAdmin.this, "email: "+email, Toast.LENGTH_LONG).show();
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-
+        // for unique key:
+//        admin = FirebaseAuth.getInstance().getCurrentUser();
+//        reference = FirebaseDatabase.getInstance().getReference("Admins");
+//        adminID = admin.getUid();
+//
+//        reference.child(adminID).addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                email = snapshot.child("email").getValue().toString();
+//                Toast.makeText(AddFoodAdmin.this, "email: "+email, Toast.LENGTH_LONG).show();
+//            }
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//
+//            }
+//        });
 
 
         //Units
@@ -203,22 +203,32 @@ public class AddFoodAdmin extends AppCompatActivity {
         boolean boolSugars =  notEmpty(sugars);
         boolean boolFats = notEmpty(fats);
 
-        String [] email_arr = email.split("@");
-        String admin_name = email_arr[0];
-        Toast.makeText(getApplicationContext(), "admin_name "+admin_name, Toast.LENGTH_SHORT).show();
+        // for unique key:
+//        String [] email_arr = email.split("@");
+//        String admin_name = email_arr[0];
+//        Toast.makeText(getApplicationContext(), "admin_name "+admin_name, Toast.LENGTH_SHORT).show();
 
+//        if (boolCalories && boolUnit && boolSodium && boolCholesterol && boolSugars && boolFats){
+//            FoodItem newFood = new FoodItem(name, calories, unit, sodium,cholesterol, sugars, fats);
+//            String id = counter+admin_name;
+//            Toast.makeText(getApplicationContext(), "id "+id, Toast.LENGTH_SHORT).show();
+//            FirebaseDatabase.getInstance().getReference("Foods")
+//                    .child(id).setValue(newFood);
+//            Toast.makeText(getApplicationContext(), "the food item "+name+" successfully added\n"
+//                    , Toast.LENGTH_SHORT).show();
+//            counter++;
+//            startActivity(( new Intent(AddFoodAdmin.this, AdminHomePage.class)));
+//        }
 
         if (boolCalories && boolUnit && boolSodium && boolCholesterol && boolSugars && boolFats){
             FoodItem newFood = new FoodItem(name, calories, unit, sodium,cholesterol, sugars, fats);
-            String id = counter+admin_name;
-            Toast.makeText(getApplicationContext(), "id "+id, Toast.LENGTH_SHORT).show();
             FirebaseDatabase.getInstance().getReference("Foods")
-                    .child(id).setValue(newFood);
-            Toast.makeText(getApplicationContext(), "the food item "+name+" successfully added\n"
+                    .child(name).setValue(newFood);
+            Toast.makeText(getApplicationContext(), "the food item "+name+" successfully update\n"
                     , Toast.LENGTH_SHORT).show();
-            counter++;
             startActivity(( new Intent(AddFoodAdmin.this, AdminHomePage.class)));
         }
+
     }
 
     public boolean notEmpty(String str){

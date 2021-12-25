@@ -1,10 +1,10 @@
 package com.example.myhealthnew;
 
 public class Event {
-    enum Category{
-        sport,
-        nutrition
-    }
+//    enum Category{
+//        sport,
+//        nutrition
+//    }
     public String name;
     public String category;
     public String registerLink;
