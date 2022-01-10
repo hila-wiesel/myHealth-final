@@ -36,12 +36,13 @@
         android:id="@+id/et_nameEvent"
         android:layout_width="300dp"
         android:layout_height="56dp"
-        android:layout_marginTop="116dp"
+        android:layout_marginTop="124dp"
+        android:layout_marginEnd="44dp"
         android:ems="10"
         android:hint="event name"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.63"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -51,8 +52,10 @@
         android:layout_height="54dp"
         android:layout_marginTop="56dp"
         android:layout_marginBottom="8dp"
-        android:text="           ADD NEW EVENT"
-        android:textSize="24sp"
+        android:text="ADD NEW EVENT"
+        android:fontFamily="casual"
+        android:textColor="#E91E63"
+        android:textSize="32sp"
         app:layout_constraintBottom_toTopOf="@+id/et_nameEvent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.598"
@@ -60,27 +63,42 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
-    <EditText
-        android:id="@+id/et_category"
-        android:layout_width="116dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="8dp"
-        android:ems="10"
-        android:hint="category"
-        android:inputType="textPersonName"
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/CategoryLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="164dp"
+        android:layout_height="66dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_return"
         app:layout_constraintEnd_toStartOf="@+id/et_date"
-        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintHorizontal_bias="0.77"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_nameEvent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.32"
+        tools:ignore="UnknownId">
+
+        <AutoCompleteTextView
+            android:id="@+id/et_category"
+            android:layout_width="155dp"
+            android:layout_height="55dp"
+            android:text="category"
+            android:textSize="14dp"
+            app:layout_constraintBottom_toBottomOf="@+id/CategoryLayout"
+            app:layout_constraintEnd_toEndOf="@+id/CategoryLayout"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/CategoryLayout"
+            app:layout_constraintTop_toTopOf="@+id/CategoryLayout"
+            app:layout_constraintVertical_bias="0.363" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <EditText
         android:id="@+id/et_date"
         android:layout_width="116dp"
         android:layout_height="55dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="36dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="44dp"
         android:ems="10"
         android:hint="date"
         android:inputType="date"
@@ -105,25 +123,27 @@
         android:layout_height="43dp"
         android:layout_marginStart="12dp"
         android:layout_marginTop="15dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="18dp"
         android:ems="10"
         android:hint="Street"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/et_registerLink"
         app:layout_constraintStart_toEndOf="@+id/et_city"
         app:layout_constraintTop_toBottomOf="@+id/et_endTime"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <EditText
         android:id="@+id/et_houseNum"
         android:layout_width="82dp"
         android:layout_height="44dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="18dp"
         android:ems="10"
         android:hint="Number"
         android:inputType="numberSigned"
+        app:layout_constraintBottom_toTopOf="@+id/et_registerLink"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/et_street"
@@ -134,38 +154,42 @@
         android:layout_width="119dp"
         android:layout_height="51dp"
         android:layout_marginStart="68dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginBottom="75dp"
         android:ems="10"
         android:hint="start"
         android:inputType="time"
+        app:layout_constraintBottom_toTopOf="@+id/et_registerLink"
+        app:layout_constraintEnd_toStartOf="@+id/et_endTime"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_category" />
+        app:layout_constraintTop_toBottomOf="@+id/CategoryLayout"
+        app:layout_constraintVertical_bias="0.869" />
 
     <EditText
         android:id="@+id/et_endTime"
         android:layout_width="119dp"
         android:layout_height="48dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="12dp"
         android:ems="10"
         android:hint="end"
         android:inputType="time"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.655"
-        app:layout_constraintStart_toEndOf="@+id/et_startTime"
-        app:layout_constraintTop_toBottomOf="@+id/et_date" />
+        app:layout_constraintHorizontal_bias="0.892"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_date"
+        app:layout_constraintVertical_bias="0.037" />
 
     <EditText
         android:id="@+id/et_registerLink"
-        android:layout_width="304dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="224dp"
+        android:layout_width="302dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="216dp"
         android:ems="10"
         android:hint="Register Link"
         android:inputType="textFilter"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.663"
+        app:layout_constraintHorizontal_bias="0.614"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_nameEvent" />
 
@@ -180,9 +204,9 @@
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.669"
+        app:layout_constraintHorizontal_bias="0.613"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_registerLink"
-        app:layout_constraintVertical_bias="0.009" />
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

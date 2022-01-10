@@ -8,43 +8,31 @@
     tools:context=".ClientRegiter1">
 
 
-
-    <EditText
-        android:id="@+id/et_Name"
-        android:layout_width="135dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="36dp"
-        android:ems="10"
-        android:hint="Name"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.108"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <EditText
         android:id="@+id/et_BirthYear"
         android:layout_width="287dp"
         android:layout_height="52dp"
-        android:layout_marginTop="380dp"
+        android:layout_marginTop="508dp"
         android:ems="10"
         android:hint="birth year"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.222"
+        app:layout_constraintHorizontal_bias="0.411"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/et_PhoneNumber"
-        android:layout_width="281dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="296dp"
-        android:ems="10"
-        android:hint="Phone number"
-        android:inputType="phone"
+    <TextView
+        android:id="@+id/btn_events"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:fontFamily="casual"
+        android:text="FILL THE INFORMATION"
+        android:textColor="#E91E63"
+        android:textSize="34sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.23"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -52,25 +40,91 @@
         android:id="@+id/et_Weight"
         android:layout_width="135dp"
         android:layout_height="51dp"
-        android:layout_marginTop="212dp"
+        android:layout_marginTop="340dp"
         android:ems="10"
         android:hint="Weight"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.731"
+        app:layout_constraintHorizontal_bias="0.818"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_PhoneNumber"
+        android:layout_width="281dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="424dp"
+        android:ems="10"
+        android:hint="Phone number"
+        android:inputType="phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.407"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/GenderLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="134dp"
+        android:layout_height="67dp"
+        app:layout_constraintBottom_toTopOf="@+id/et_Country"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.415"
+        app:layout_constraintStart_toEndOf="@+id/et_Name"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.889">
+
+        <AutoCompleteTextView
+            android:id="@+id/txtGender"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:text="Gender" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <EditText
         android:id="@+id/et_Height"
         android:layout_width="135dp"
         android:layout_height="51dp"
-        android:layout_marginTop="212dp"
+        android:layout_marginTop="340dp"
         android:ems="10"
         android:hint="Height"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.108"
+        app:layout_constraintHorizontal_bias="0.192"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="23dp"
+        tools:layout_editor_absoluteY="132dp" />
+
+    <EditText
+        android:id="@+id/et_Name"
+        android:layout_width="135dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="164dp"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.192"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_City"
+        android:layout_width="135dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="248dp"
+        android:ems="10"
+        android:hint="City"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.192"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -78,53 +132,30 @@
         android:id="@+id/et_Country"
         android:layout_width="135dp"
         android:layout_height="51dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="248dp"
         android:ems="10"
         android:hint="Country"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.731"
+        app:layout_constraintHorizontal_bias="0.818"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/et_Gender"
-        android:layout_width="135dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="36dp"
-        android:ems="10"
-        android:hint="Gender"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.728"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="296dp"
-        android:text="Next"
+        android:layout_marginStart="295dp"
         android:onClick="onClickNext"
+        android:text="Next"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.773"
+        app:layout_constraintVertical_bias="0.948"
         tools:ignore="OnClick" />
 
-
-    <EditText
-        android:id="@+id/et_City"
-        android:layout_width="135dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="120dp"
-        android:ems="10"
-        android:hint="City"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.108"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

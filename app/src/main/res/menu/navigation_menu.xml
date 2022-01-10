@@ -1,23 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+
     <item
         android:id="@+id/menuProfile"
+        android:orderInCategory="100"
         android:icon="@drawable/profile"
+        android:onClick="onOptionsItemSelected"
         android:title="@string/profile"/>
 
     <item
         android:id="@+id/menuNotifications"
         android:icon="@drawable/notification"
+        android:onClick="onOptionsItemSelected"
         android:title="@string/notifications"/>
 
     <item
         android:id="@+id/menuLogOut"
         android:icon="@drawable/logout"
+        android:onClick="onOptionsItemSelected"
         android:title="@string/logout"/>
 
     <item
         android:id="@+id/menuSetting"
         android:icon="@drawable/setting"
         android:title="@string/setting"/>
+
+
+    //before:
+<!--    <item-->
+<!--        android:id="@+id/menuProfile"-->
+<!--        android:icon="@drawable/profile"-->
+<!--        android:title="@string/profile"/>-->
+
+<!--    <item-->
+<!--        android:id="@+id/menuNotifications"-->
+<!--        android:icon="@drawable/notification"-->
+<!--        android:title="@string/notifications"/>-->
+
+<!--    <item-->
+<!--        android:id="@+id/menuLogOut"-->
+<!--        android:icon="@drawable/logout"-->
+<!--        android:title="@string/logout"/>-->
+
+<!--    <item-->
+<!--        android:id="@+id/menuSetting"-->
+<!--        android:icon="@drawable/setting"-->
+<!--        android:title="@string/setting"/>-->
 
 </menu>

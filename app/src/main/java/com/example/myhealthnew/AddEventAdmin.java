@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -13,10 +16,28 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class AddEventAdmin extends AppCompatActivity {
 
+    //Category
+    String[] categoryItems = {"Sport", "Nutrition"};
+    AutoCompleteTextView idCategory;
+    ArrayAdapter<String> adapterItemsCategory;
+    String category;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_event_admin);
+
+        //Category
+        idCategory = findViewById(R.id.et_category);
+        adapterItemsCategory = new ArrayAdapter<String>(this,R.layout.list_items, categoryItems);
+        idCategory.setAdapter(adapterItemsCategory);
+        idCategory.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                category = parent.getItemAtPosition(position).toString();
+                Toast.makeText(getApplicationContext(), "category "+category, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 
@@ -57,8 +78,8 @@ public class AddEventAdmin extends AppCompatActivity {
             et_name.requestFocus();
             return;
         }
-        if(!category.equals("sport") && !category.equals("nutrition")){
-            et_category.setError("category = sport/nutrition");
+        if(category.isEmpty()){
+            et_category.setError("category is required!");
             et_category.requestFocus();
             return;
         }
@@ -101,8 +122,7 @@ public class AddEventAdmin extends AppCompatActivity {
         Event newEvent = new Event(name, category, registerLink, city, street, houseNum, date,
                 startTime, endTime, description);
         FirebaseDatabase.getInstance().getReference("Events").child(city)
-                .child(category).child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                .setValue(newEvent);
+                .child(category).child(name).setValue(newEvent);
 
         Toast.makeText(AddEventAdmin.this, "event added successfully", Toast.LENGTH_SHORT).show();
         // notification...

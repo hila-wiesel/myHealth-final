@@ -26,11 +26,11 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class AddFoodAdmin extends AppCompatActivity {
-    // for unique key:
-//    int counter = 1;
-//    private DatabaseReference reference;
-//    private String adminID;
-//    private FirebaseUser admin;
+
+    //Category
+    String[] categoryItems = {"Carbohydrates", "Proteins", "vegetables", "Fruits",  "Other", "Fats"};
+    AutoCompleteTextView idCategory;
+    ArrayAdapter<String> adapterItemsCategory;
 
     //Units
     String[] unitItems = {"100 grams", "teaspoon", "tablespoon", "slice", "glass", "one unit"};
@@ -62,8 +62,7 @@ public class AddFoodAdmin extends AppCompatActivity {
     AutoCompleteTextView idCholesterol;
     ArrayAdapter<String> adapterItemsCholesterol;
 
-    String admin_name,email,
-            unit, calories, sugars, sodium, fats, cholesterol;
+    String unit, calories, sugars, sodium, fats, cholesterol, category;
 
 
     @Override
@@ -71,26 +70,21 @@ public class AddFoodAdmin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_food_admin);
 
-        // for unique key:
-//        admin = FirebaseAuth.getInstance().getCurrentUser();
-//        reference = FirebaseDatabase.getInstance().getReference("Admins");
-//        adminID = admin.getUid();
-//
-//        reference.child(adminID).addListenerForSingleValueEvent(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                email = snapshot.child("email").getValue().toString();
-//                Toast.makeText(AddFoodAdmin.this, "email: "+email, Toast.LENGTH_LONG).show();
-//            }
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
+        //Category
+        idCategory = findViewById(R.id.txtCategory);
+        adapterItemsCategory = new ArrayAdapter<String>(this,R.layout.list_items, categoryItems);
+        idCategory.setAdapter(adapterItemsCategory);
+
+        idCategory.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                category = parent.getItemAtPosition(position).toString();
+                Toast.makeText(getApplicationContext(), "test(in): "+category, Toast.LENGTH_LONG).show();
+            }
+        });
 
 
         //Units
-
         idUnit = findViewById(R.id.txtUnit);
         adapterItemsUnits = new ArrayAdapter<String>(this,R.layout.list_items, unitItems);
         idUnit.setAdapter(adapterItemsUnits);
@@ -98,7 +92,6 @@ public class AddFoodAdmin extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 unit = parent.getItemAtPosition(position).toString();
-//                Toast.makeText(getApplicationContext(), "unit "+unit, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -113,7 +106,6 @@ public class AddFoodAdmin extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 calories = parent.getItemAtPosition(position).toString();
-//                Toast.makeText(getApplicationContext(), "Calories "+calories, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -128,7 +120,6 @@ public class AddFoodAdmin extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 sugars = parent.getItemAtPosition(position).toString();
-//                Toast.makeText(getApplicationContext(), "Sugars "+sugars, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -143,7 +134,6 @@ public class AddFoodAdmin extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 sodium = parent.getItemAtPosition(position).toString();
-//                Toast.makeText(getApplicationContext(), "sodium "+sodium, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -158,7 +148,6 @@ public class AddFoodAdmin extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 fats = parent.getItemAtPosition(position).toString();
-//                Toast.makeText(getApplicationContext(), "fats "+fats, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -173,19 +162,12 @@ public class AddFoodAdmin extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 cholesterol = parent.getItemAtPosition(position).toString();
-//                Toast.makeText(getApplicationContext(), "cholesterol "+cholesterol, Toast.LENGTH_SHORT).show();
             }
         });
 
     }
 
-    public void returnClick(View view) {
-        Intent intent = new Intent(AddFoodAdmin.this, AdminHomePage.class);
-        Bundle b = new Bundle();
-        b.putInt("key", 1);
-        startActivity(intent);
-        finish();
-    }
+
 
     public void submitClick(View view) {
         EditText et_Name = (EditText) findViewById(R.id.et_foodName);
@@ -196,39 +178,31 @@ public class AddFoodAdmin extends AppCompatActivity {
             et_Name.requestFocus();
             return;
         }
+
         boolean boolCalories = notEmpty(calories);
         boolean boolUnit = notEmpty(unit);
         boolean boolSodium = notEmpty(sodium);
         boolean boolCholesterol = notEmpty(cholesterol);
         boolean boolSugars =  notEmpty(sugars);
         boolean boolFats = notEmpty(fats);
-
-        // for unique key:
-//        String [] email_arr = email.split("@");
-//        String admin_name = email_arr[0];
-//        Toast.makeText(getApplicationContext(), "admin_name "+admin_name, Toast.LENGTH_SHORT).show();
-
-//        if (boolCalories && boolUnit && boolSodium && boolCholesterol && boolSugars && boolFats){
-//            FoodItem newFood = new FoodItem(name, calories, unit, sodium,cholesterol, sugars, fats);
-//            String id = counter+admin_name;
-//            Toast.makeText(getApplicationContext(), "id "+id, Toast.LENGTH_SHORT).show();
-//            FirebaseDatabase.getInstance().getReference("Foods")
-//                    .child(id).setValue(newFood);
-//            Toast.makeText(getApplicationContext(), "the food item "+name+" successfully added\n"
-//                    , Toast.LENGTH_SHORT).show();
-//            counter++;
-//            startActivity(( new Intent(AddFoodAdmin.this, AdminHomePage.class)));
-//        }
-
-        if (boolCalories && boolUnit && boolSodium && boolCholesterol && boolSugars && boolFats){
+        boolean boolCaterory = notEmpty(category);
+        if (boolCalories && boolUnit && boolSodium && boolCholesterol && boolSugars && boolFats &&
+                boolCaterory){
             FoodItem newFood = new FoodItem(name, calories, unit, sodium,cholesterol, sugars, fats);
-            FirebaseDatabase.getInstance().getReference("Foods")
+            FirebaseDatabase.getInstance().getReference("Foods").child(category)
                     .child(name).setValue(newFood);
             Toast.makeText(getApplicationContext(), "the food item "+name+" successfully update\n"
                     , Toast.LENGTH_SHORT).show();
             startActivity(( new Intent(AddFoodAdmin.this, AdminHomePage.class)));
         }
+    }
 
+    public void returnClick(View view) {
+        Intent intent = new Intent(AddFoodAdmin.this, AdminHomePage.class);
+        Bundle b = new Bundle();
+        b.putInt("key", 1);
+        startActivity(intent);
+        finish();
     }
 
     public boolean notEmpty(String str){

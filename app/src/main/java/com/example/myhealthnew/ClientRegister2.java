@@ -50,7 +50,7 @@ public class ClientRegister2 extends AppCompatActivity {
 
         tvDay = findViewById(R.id.tv_day);
         selectedDay = new boolean[dayArray.length];
-        tvDay2 = findViewById(R.id.tv_day2);
+//        tvDay2 = findViewById(R.id.tv_day2);
         selectedhour = new boolean[hoursArray.length];
         tvDay.setOnClickListener(new View.OnClickListener() {
             @Override

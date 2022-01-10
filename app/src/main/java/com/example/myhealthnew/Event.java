@@ -14,7 +14,7 @@ public class Event {
     public String date;
     public String startTime;
     public String endTime;
-
+    public String description;
 //    public int day_date;
 //    public int month_date;
 //    public int year_date;
@@ -22,7 +22,7 @@ public class Event {
 //    public int hour_startTime;
 //    public int minute_endTime;
 //    public int hour_endTime;
-    public String description;
+
     //picture
 
     public  Event( String name, String category, String registerLink, String city, String street,
@@ -37,10 +37,19 @@ public class Event {
         this.startTime= startTime;
         this.endTime = endTime;
         this.description = description;
-
-
     }
-//    public  Event( String name, Category category, String registerLink, String city, String street,
+
+    @Override
+    public String toString() {
+        return  //"Event Name: " + name + "\n\n" +
+                "Category: " + category + "\n\n" +
+                "RegisterLink: " + registerLink + "\n\n" +
+                "Address: " + street + " " + houseNum+ ", " + city + "\n\n" +
+                "On: " + date + ", at " + startTime + " - " + endTime + "\n\n" +
+                description + "\n\n";
+    }
+
+    //    public  Event( String name, Category category, String registerLink, String city, String street,
 //                   int houseNum, int day_date, int month_date, int year_date, int minute_startTime,
 //                   int hour_startTime, int minute_endTime, int hour_endTime, String description){
 //

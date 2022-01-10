@@ -7,4 +7,187 @@
     android:background="@drawable/backhealth"
     tools:context=".AddMealClient">
 
+    <TextView
+        android:id="@+id/btn_addMeal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="casual"
+        android:text="ADD A MEAL"
+        android:textColor="#E91E63"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.038" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/CategoryLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="176dp"
+        android:layout_height="75dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.093"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.162">
+
+        <AutoCompleteTextView
+            android:id="@+id/txtCategory"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="Category" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/FoodLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="178dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/ed_amount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.09"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CategoryLayout">
+
+        <AutoCompleteTextView
+            android:id="@+id/txtFood"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="foodItem" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn_return_AddMeal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        android:onClick="returnClick"
+        android:text="return"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.113"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <Button
+        android:id="@+id/btn_submit_AddMeal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="submitClick"
+        android:text="submit"
+        app:layout_constraintBottom_toTopOf="@+id/calories"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.872"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_unit"
+        app:layout_constraintVertical_bias="0.45" />
+
+    <EditText
+        android:id="@+id/ed_amount"
+        android:layout_width="194dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="24dp"
+        android:ems="10"
+        android:hint="amount"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CategoryLayout"
+        app:layout_constraintVertical_bias="0.238" />
+
+    <TextView
+        android:id="@+id/tv_unit"
+        android:layout_width="139dp"
+        android:layout_height="39dp"
+        android:hint="units"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.456"
+        app:layout_constraintStart_toEndOf="@+id/ed_amount"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.441" />
+
+    <TextView
+        android:id="@+id/calories"
+        android:layout_width="353dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="424dp"
+        android:textColor="#000000"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/leftCalories"
+        android:layout_width="361dp"
+        android:layout_height="139dp"
+        android:layout_marginTop="10dp"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calories"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btn_addOneMore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:layout_marginBottom="28dp"
+        android:onClick="addOneMore"
+        android:text="add one more"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.327"
+        app:layout_constraintStart_toEndOf="@+id/btn_return_AddMeal" />
+
+    <Button
+        android:id="@+id/btn_okCategory"
+        android:layout_width="90dp"
+        android:layout_height="42dp"
+        android:layout_marginEnd="40dp"
+        android:onClick="OkCategory"
+        android:text="OK"
+        app:layout_constraintBottom_toTopOf="@+id/btn_okFood"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.385"
+        app:layout_constraintStart_toEndOf="@+id/CategoryLayout"
+        app:layout_constraintTop_toBottomOf="@+id/btn_addMeal"
+        app:layout_constraintVertical_bias="0.389" />
+
+    <Button
+        android:id="@+id/btn_okFood"
+        android:layout_width="90dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="210dp"
+        android:onClick="okFood"
+        android:text="ok"
+        app:layout_constraintBottom_toTopOf="@+id/btn_submit_AddMeal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.254"
+        app:layout_constraintStart_toEndOf="@+id/FoodLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

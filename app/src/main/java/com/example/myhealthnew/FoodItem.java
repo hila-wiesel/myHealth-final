@@ -11,23 +11,34 @@ public class FoodItem {
 //        oneUnit
 //    }
 
-    public String name;
-    public String calories;
-    public String unit;
-    public String sodium;
-    public String cholesterol;
-    public String sugars;
-    public String fats;
+    public String Name;
+    public String Calories;
+    public String Unit;
+    public String Sodium;
+    public String Cholesterol;
+    public String Sugars;
+    public String Fats;
 
     public FoodItem(String name, String calories, String unit, String sodium, String  cholesterol,
                     String sugars, String fats){
-        this.name = name;
-        this.calories = calories;
-        this.unit = unit;
-        this.sodium = sodium;
-        this.cholesterol = cholesterol;
-        this.sugars = sugars;
-        this.fats = fats;
+        this.Name = name;
+        this.Calories = calories;
+        this.Unit = unit;
+        this.Sodium = sodium;
+        this.Cholesterol = cholesterol;
+        this.Sugars = sugars;
+        this.Fats = fats;
+    }
+
+    public FoodItem(String name, String calories, String unit, String sodium, String  cholesterol,
+                     String fats){
+        this.Name = name;
+        this.Calories = calories;
+        this.Unit = unit;
+        this.Sodium = sodium;
+        this.Cholesterol = cholesterol;
+//        this. = sugars;
+        this.Fats = fats;
     }
 }
 

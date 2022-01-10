@@ -2,12 +2,11 @@ package com.example.myhealthnew;
 
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Client extends User {
-//    enum Gender{
-//        male,
-//        female
-//    }
+
+    public String userType;
     public String  name;
     public double height;
     public double weight;
@@ -19,7 +18,8 @@ public class Client extends User {
     public ArrayList<Integer> waterReminderFrequency;
     public ArrayList<Integer> sportReminderFrequency;
     public double recommendedCaloriesPerDay;
-    public int leftCaloriesPerDay;
+    public double leftCaloriesPerDay;
+    public String lastRestart;
 
 
     public Client(String email, String password, String name, int height, int weight, String city,
@@ -34,5 +34,8 @@ public class Client extends User {
         this.birthYear = birthYear;
         this.gender = gender;
         this.recommendedCaloriesPerDay = recommendedCaloriesPerDay;
+        this.leftCaloriesPerDay = recommendedCaloriesPerDay;
+        this.userType = "Client";
+        this.lastRestart = new Date().toString();
     }
 }

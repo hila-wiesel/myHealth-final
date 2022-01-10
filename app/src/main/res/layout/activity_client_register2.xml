@@ -27,44 +27,58 @@
 
     <TextView
         android:id="@+id/et_SportRemindwer_CreateClient"
-        android:layout_width="330dp"
-        android:layout_height="61dp"
+        android:layout_width="329dp"
+        android:layout_height="29dp"
         android:text="to help you improve your health"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/design_default_color_error"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.577"
+        app:layout_constraintHorizontal_bias="0.536"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.189" />
+        app:layout_constraintVertical_bias="0.217" />
+
+    <TextView
+        android:id="@+id/btn_events"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:fontFamily="casual"
+        android:text="NOTIFICATIONS"
+        android:textColor="#E91E63"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <TextView
         android:id="@+id/tv_title__CreateClinet2"
-        android:layout_width="320dp"
-        android:layout_height="55dp"
+        android:layout_width="327dp"
+        android:layout_height="39dp"
         android:text="We will remaund you things "
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/design_default_color_error"
         app:layout_constraintBottom_toTopOf="@+id/et_SportRemindwer_CreateClient"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintHorizontal_bias="0.547"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
-
-    <TextView
-        android:id="@+id/et_WaterReminder_CreateClient2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Choose daily reminder frequenciy for drinking water"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/tv_day2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.96" />
+<!--    <TextView-->
+<!--        android:id="@+id/et_WaterReminder_CreateClient2"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Choose daily reminder frequenciy for drinking water"-->
+<!--        android:textColor="@color/black"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/tv_day2"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.96" />-->
 
     <TextView
         android:id="@+id/et_SportRemindwer_CreateClient2"

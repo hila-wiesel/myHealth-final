@@ -12,53 +12,57 @@
         android:id="@+id/add_food_admin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="108dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="36dp"
         android:onClick="addFoodItem"
         android:text="ADD NEW FOOD ITEM"
         android:textAlignment="viewStart"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.127"
+        app:layout_constraintHorizontal_bias="0.141"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btn_C_option"
+        app:layout_constraintTop_toBottomOf="@+id/btn_C_option"
         tools:ignore="OnClick,UsingOnClickInXml" />
 
     <Button
         android:id="@+id/update_food_admin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="99dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="30dp"
         android:onClick="updateFoodItem"
         android:text="UPDADE EXIST FOOD ITEM "
         android:textAlignment="viewStart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.159"
+        app:layout_constraintHorizontal_bias="0.176"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/add_food_admin"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/add_food_admin"
+        app:layout_constraintVertical_bias="0.005" />
 
     <Button
         android:id="@+id/add_event_admin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="125dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="30dp"
         android:onClick="addEvent"
         android:text="ADD NEW EVENT"
         android:textAlignment="viewStart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.123"
+        app:layout_constraintHorizontal_bias="0.117"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/update_food_admin"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/update_food_admin"
+        app:layout_constraintVertical_bias="0.006" />
 
     <TextView
         android:id="@+id/btn_goodTsee"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="316dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="60dp"
         android:fontFamily="casual"
-        android:text="GOOD TO SEE YOU!"
+        android:text="GOOD TO SEE YOU"
         android:textColor="#E91E63"
         android:textSize="34sp"
         android:textStyle="bold"
@@ -76,8 +80,9 @@
 
     <TextView
         android:id="@+id/btn_C_option"
-        android:layout_width="267dp"
-        android:layout_height="73dp"
+        android:layout_width="263dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="80dp"
         android:fontFamily="monospace"
         android:text="Please Choose Option:"
@@ -97,17 +102,33 @@
         android:orientation="vertical"
         app:layout_constraintGuide_begin="20dp" />
 
-    <ImageButton
-        android:id="@+id/btn_logout"
-        android:layout_width="48dp"
-        android:layout_height="43dp"
-        android:onClick="logout"
+    <Button
+        android:id="@+id/btn_seeEvents"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="30dp"
+        android:onClick="seeEvents"
+        android:text="SEE EVENTS"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.094"
+        app:layout_constraintHorizontal_bias="0.108"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.947"
-        app:srcCompat="@drawable/logout" />
+        app:layout_constraintTop_toBottomOf="@+id/add_event_admin"
+        app:layout_constraintVertical_bias="0.007" />
+
+    <Button
+        android:id="@+id/btn_logout_Admin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:onClick="logout"
+        android:text="LOGOUT"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.11"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_seeEvents"
+        app:layout_constraintVertical_bias="0.82" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
